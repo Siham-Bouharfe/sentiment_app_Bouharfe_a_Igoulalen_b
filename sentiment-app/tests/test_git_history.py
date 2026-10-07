@@ -17,7 +17,11 @@ def _git(root: Path, *args: str) -> str:
 
 @pytest.fixture(scope="module")
 def git_root(root: Path) -> Path:
-    if shutil.which("git") is None or not (root / ".git").exists():
+    if shutil.which("git") is None:
+        pytest.skip("pas un dépôt Git")
+    try:
+        _git(root, "rev-parse", "--is-inside-work-tree")
+    except subprocess.CalledProcessError:
         pytest.skip("pas un dépôt Git")
     try:
         _git(root, "rev-parse", "HEAD")

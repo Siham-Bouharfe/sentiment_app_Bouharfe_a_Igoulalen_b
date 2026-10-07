@@ -24,7 +24,7 @@ pytest -q                        # les mêmes vérifications, sous forme de test
 ![alt text](image-1.png)
 
 **Après modification**
-![alt text](image-2.png)
+![alt text](image-3.png)
 
 Les scripts `scripts/setup.sh` (Linux, macOS, Git Bash) et `scripts/setup.ps1` (Windows) font l'installation et le diagnostic en une commande.
 

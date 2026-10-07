@@ -50,10 +50,16 @@ def test_gitignore_contains(root: Path, pattern):
 
 def test_no_real_env_file_committed(root: Path):
     """Un .env peut exister localement, mais il ne doit jamais être suivi par Git."""
-    git_dir = root / ".git"
-    if not git_dir.exists():
-        pytest.skip("pas un dépôt Git")
     import subprocess
+
+    result = subprocess.run(
+        ["git", "rev-parse", "--is-inside-work-tree"],
+        cwd=root,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        pytest.skip("pas un dépôt Git")
 
     tracked = subprocess.run(["git", "ls-files"], cwd=root, capture_output=True, text=True).stdout.split()
     assert ".env" not in tracked, ".env est suivi par Git : git rm --cached .env"
