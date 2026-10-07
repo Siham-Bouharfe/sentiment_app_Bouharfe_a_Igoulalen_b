@@ -77,5 +77,5 @@ sentiment-app/
 
 | Rôle | Nom | Identifiant GitHub | Travail de la semaine 1 |
 | --- | --- | --- | --- |
-| Membre A | [Nom 1] | [@login] | |
-| Membre B | [Nom 2] | [@login] | |
+| Membre A | [Siham Bouharfe] | [Siham-Bouharfe] | |
+| Membre B | [Amal Igoulalen] | [amaligoulalen] | |
