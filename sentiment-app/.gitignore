@@ -32,3 +32,17 @@ Thumbs.db
 htmlcov/
 
 !models/metrics.json
+
+# TP4
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+!data/jeu_or.csv
+
+# TP5
+!data/avis_exemple.csv
+
+# Kits locaux téléchargés pour les séances
+tp2-semaine2/
+tp3-streamlit/
+.kit-work/
